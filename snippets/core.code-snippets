@@ -1,0 +1,76 @@
+{
+  "CDK Import": {
+    "prefix": "cdk-import",
+    "body": ["import * as ${1:service} from '@aws-cdk/aws-${1:service}';"]
+  },
+
+  "CDK Construct": {
+    "prefix": "cdk-construct",
+    "body": [
+      "import { Construct } from '@aws-cdk/core';",
+      "",
+      "export interface ${1:ConstructorName}Props {",
+      "",
+      "}",
+      "",
+      "export class ${1:ConstructorName} extends Construct {",
+      "  constructor(scope: Construct, id: string, props: ${1:ConstructorName}Props) {",
+      "    super(scope, id);",
+      "",
+      "    ${3}",
+      "  }",
+      "}"
+    ]
+  },
+
+  "CDK Stack": {
+    "prefix": "cdk-stack",
+    "body": [
+      "import { App, Stack, StackProps } from '@aws-cdk/core';",
+      "",
+      "export interface ${1:StackName}Props extends StackProps {",
+      "",
+      "}",
+      "",
+      "export class ${1:StackName} extends Stack {",
+      "  constructor(scope: App, id: string, props: ${1:StackName}Props) {",
+      "    super(scope, id);",
+      "",
+      "    ${2}",
+      "  }",
+      "}"
+    ]
+  },
+
+  "CDK App": {
+    "prefix": "cdk-app",
+    "body": [
+      "#!/usr/bin/env node",
+      "import 'source-map-support/register';",
+      "import * as cdk from '@aws-cdk/core';",
+      "",
+      "const app = new cdk.App();",
+      "",
+      "$1"
+    ]
+  },
+
+  "Cfn Parameter": {
+    "prefix": "cfn-parameter",
+    "body": [
+      "new cdk.CfnParameter(this, \"${1:id}\", {",
+      "  type: \"${2|String,Number,List<Number>,CommaDelimitedList|}\"",
+      "})"
+    ]
+  },
+
+  "Cfn Output": {
+    "prefix": "cfn-output",
+    "body": [
+      "new cdk.CfnOutput(this, \"${1:id}\", {",
+      "  value: \"${2}\",",
+      "  exportName: \"${1}\"",
+      "})"
+    ]
+  }
+}

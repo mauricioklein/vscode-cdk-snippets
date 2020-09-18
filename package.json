@@ -11,6 +11,10 @@
     ],
     "contributes": {
         "snippets": [
+            {
+                "language": "typescript",
+                "path": "./snippets/core.code-snippets"
+            }
         ]
     }
 }
