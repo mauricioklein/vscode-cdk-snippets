@@ -1,0 +1,90 @@
+{
+  "Role": {
+    "prefix": "iam-role",
+    "body": [
+      "new iam.Role(this, \"${1:id}\", {",
+      "  roleName: \"${1:id}\",",
+      "  assumedBy: $2",
+      "})"
+    ]
+  },
+
+  "ImportRole": {
+    "prefix": "iam-import-role",
+    "body": [
+      "iam.Role.fromRoleArn(this, \"${1:id}\", \"arn:aws:iam::${2:accountId}:role/${3:roleName}\")"
+    ]
+  },
+
+  "PolicyDocument": {
+    "prefix": "iam-policy-document",
+    "body": [
+      "new iam.PolicyDocument({",
+      "  statements: [",
+      "    $1",
+      "  ],",
+      "})"
+    ]
+  },
+
+  "PolicyStatement": {
+    "prefix": "iam-policy-statement",
+    "body": [
+      "new iam.PolicyStatement({",
+      "  effect: iam.Effect.${1|ALLOW,DENY|},",
+      "  resources: [",
+      "    $2",
+      "  ]",
+      "  actions: [",
+      "    $3",
+      "  ],",
+      "  principals: [",
+      "    $4",
+      "  ]",
+      "})"
+    ]
+  },
+
+  "AwsManagedPolicyByName": {
+    "prefix": "iam-aws-managed-policy-by-name",
+    "body": [
+      "iam.ManagedPolicy.fromAwsManagedPolicyName(\"${1:managedPolicyName}\")"
+    ]
+  },
+
+  "ManagedPolicyByArn": {
+    "prefix": "iam-managed-policy-by-arn",
+    "body": [
+      "iam.ManagedPolicy.fromManagedPolicyArn(this, \"${1:id}\", \"arn:aws:iam::${2:accountId}:policy/${3:managedPolicyPath}\")"
+    ]
+  },
+
+  "ManagedPolicyByName": {
+    "prefix": "iam-managed-policy-by-name",
+    "body": [
+      "iam.ManagedPolicy.fromManagedPolicyName(this, \"${1:id}\", \"${2:managedPolicyName}\")"
+    ]
+  },
+
+  "AccountPrincipal": {
+    "prefix": "iam-account-principal",
+    "body": ["new iam.AccountPrincipal(\"${1:accountId}\")"]
+  },
+
+  "ArnPrincipal": {
+    "prefix": "iam-arn-principal",
+    "body": [
+      "new iam.ArnPrincipal(\"arn:aws:iam::${1:accountId}:${2:resource}\")"
+    ]
+  },
+
+  "ServicePrincipal": {
+    "prefix": "iam-service-principal",
+    "body": ["new iam.ServicePrincipal(\"$1.amazon.com\")"]
+  },
+
+  "OrganizationPrincipal": {
+    "prefix": "iam-organization-principal",
+    "body": ["new iam.OrganizationPrincipal(\"o-$1\")"]
+  }
+}
