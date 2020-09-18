@@ -1,0 +1,16 @@
+{
+    "name": "vscode-cdk-snippets",
+    "displayName": "vscode-cdk-snippets",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+        ]
+    }
+}
