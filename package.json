@@ -1,45 +1,49 @@
 {
-    "name": "cdk-snippets",
-    "displayName": "cdk-snippets",
-    "description": "Snippets for CDK",
-    "publisher": "mklein",
-    "version": "0.1.0",
-    "engines": {
-        "vscode": "^1.49.0"
-    },
-    "license": "SEE LICENSE IN LICENSE",
-    "categories": [
-        "Snippets"
-    ],
-    "keywords": [
-        "cdk"
-    ],
-    "contributes": {
-        "snippets": [
-            {
-                "language": "typescript",
-                "path": "./snippets/core.code-snippets"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/iam.code-snippets"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/dynamodb.code-snippets"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/lambda.code-snippets"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/s3.code-snippets"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/kms.code-snippets"
-            }
-        ]
-    }
+  "name": "cdk-snippets",
+  "displayName": "cdk-snippets",
+  "description": "Snippets for CDK",
+  "publisher": "mklein",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "cdk"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/core.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/iam.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/dynamodb.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/lambda.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/s3.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/kms.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/sqs.code-snippets"
+      }
+    ]
+  }
 }

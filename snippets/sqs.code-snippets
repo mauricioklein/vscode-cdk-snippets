@@ -1,0 +1,18 @@
+{
+  "Queue": {
+    "prefix": "sqs-queue",
+    "body": [
+      "new sqs.Queue(this, \"${1:id}\", {",
+      "  queueName: \"${2}\",",
+      "  encryption: sqs.QueueEncryption.${3|UNENCRYPTED,KMS_MANAGED,KMS|},",
+      "  retentionPeriod: cdk.Duration.$4,",
+      "  deadLetterQueue: ${5},",
+      "})"
+    ]
+  },
+
+  "DeadLetterQueue": {
+    "prefix": "sqs-dlq",
+    "body": ["{", "  maxReceiveCount: ${1},", "  queue: ${2},", "}"]
+  }
+}
