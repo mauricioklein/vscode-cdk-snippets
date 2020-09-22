@@ -27,6 +27,10 @@
             {
                 "language": "typescript",
                 "path": "./snippets/dynamodb.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/lambda.code-snippets"
             }
         ]
     }
