@@ -35,6 +35,10 @@
             {
                 "language": "typescript",
                 "path": "./snippets/s3.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/kms.code-snippets"
             }
         ]
     }
