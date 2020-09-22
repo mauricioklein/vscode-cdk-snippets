@@ -1,0 +1,17 @@
+{
+  "Topic": {
+    "prefix": "sns-topic",
+    "body": [
+      "new sns.Topic(this, \"${1:id}\", {",
+      "  topicName: \"${2}\",",
+      "})"
+    ]
+  },
+
+  "TopicFromArn": {
+    "prefix": "sns-topic-from-arn",
+    "body": [
+      "sns.Topic.fromTopicArn(this, \"${1:id}\", \"arn:aws:sns:${2:region}:${3:accountId}:${4:topicName}\")"
+    ]
+  }
+}

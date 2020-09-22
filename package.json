@@ -43,6 +43,10 @@
       {
         "language": "typescript",
         "path": "./snippets/sqs.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/sns.code-snippets"
       }
     ]
   }
