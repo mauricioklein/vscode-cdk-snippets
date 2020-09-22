@@ -23,6 +23,10 @@
             {
                 "language": "typescript",
                 "path": "./snippets/iam.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/dynamodb.code-snippets"
             }
         ]
     }

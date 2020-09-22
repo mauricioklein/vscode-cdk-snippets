@@ -1,0 +1,45 @@
+{
+  "Table": {
+    "prefix": "ddb-table",
+    "body": [
+      "new dynamodb.Table(this, \"${1:tableName}\", {",
+      "  tableName: \"${1:tableName}\",",
+      "  partitionKey: $2,",
+      "  sortKey: $3,",
+      "  billingMode: dynamodb.BillingMode.${4|PAY_PER_REQUEST,PROVISIONED|},",
+      "})"
+    ]
+  },
+
+  "Attribute": {
+    "prefix": "ddb-attribute",
+    "body": [
+      "{ name: \"${1}\", type: dynamodb.AttributeType.${2|STRING,NUMBER,BINARY|} }"
+    ]
+  },
+
+  "GSI": {
+    "prefix": "ddb-gsi",
+    "body": [
+      "${1:table}.addGlobalSecondaryIndex({",
+      "  indexName: \"${2:indexName}\",",
+      "  partitionKey: ${3},",
+      "  sortKey: ${4},",
+      "  nonKeyAttributes: [${5}],",
+      "  projectionType: dynamodb.ProjectionType.${6|ALL,INCLUDE,KEYS_ONLY|},",
+      "})"
+    ]
+  },
+
+  "LSI": {
+    "prefix": "ddb-lsi",
+    "body": [
+      "${1:table}.addLocalSecondaryIndex({",
+      "  indexName: \"${2:indexName}\",",
+      "  sortKey: ${3},",
+      "  nonKeyAttributes: [${4}],",
+      "  projectionType: dynamodb.ProjectionType.${5|ALL,INCLUDE,KEYS_ONLY|},",
+      "})"
+    ]
+  }
+}
