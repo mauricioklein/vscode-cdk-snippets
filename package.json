@@ -1,13 +1,18 @@
 {
-    "name": "vscode-cdk-snippets",
-    "displayName": "vscode-cdk-snippets",
-    "description": "",
-    "version": "0.0.1",
+    "name": "cdk-snippets",
+    "displayName": "cdk-snippets",
+    "description": "Snippets for CDK",
+    "publisher": "mklein",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.49.0"
     },
+    "license": "SEE LICENSE IN LICENSE",
     "categories": [
         "Snippets"
+    ],
+    "keywords": [
+        "cdk"
     ],
     "contributes": {
         "snippets": [
