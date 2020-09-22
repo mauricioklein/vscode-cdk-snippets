@@ -47,6 +47,10 @@
       {
         "language": "typescript",
         "path": "./snippets/sns.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/sns-subscription.code-snippets"
       }
     ]
   }
