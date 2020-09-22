@@ -31,6 +31,10 @@
             {
                 "language": "typescript",
                 "path": "./snippets/lambda.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/s3.code-snippets"
             }
         ]
     }

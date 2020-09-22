@@ -1,0 +1,57 @@
+{
+  "Bucket": {
+    "prefix": "s3-bucket",
+    "body": [
+      "new s3.Bucket(this, \"${1:id}\", {",
+      "  bucketName: \"${2:bucketName}\",",
+      "  accessControl: s3.BucketAccessControl.${3|PRIVATE,PUBLIC_READ,PUBLIC_READ_WRITE,AUTHENTICATED_READ,LOG_DELIVERY_WRITE,BUCKET_OWNER_READ,BUCKET_OWNER_FULL_CONTROL,AWS_EXEC_READ|},",
+      "  encryption: s3.BucketEncryption.${4|S3_MANAGED,KMS_MANAGED,KMS,UNENCRYPTED|},",
+      "  versioned: ${5|false,true|},",
+      "  blockPublicAccess: s3.BlockPublicAccess.${6|BLOCK_ALL,BLOCK_ACLS|}",
+      "})"
+    ]
+  },
+
+  "BlockPublicAccessConfig": {
+    "prefix": "s3-block-config",
+    "body": [
+      "{",
+      "  blockPublicAcls: ${1|false,true|},",
+      "  blockPublicPolicy: ${2|false,true|},",
+      "  ignorePublicAcls: ${3|false,true|},",
+      "  restrictPublicBuckets: ${4|false,true|}",
+      "}"
+    ]
+  },
+
+  "BucketFromName": {
+    "prefix": "s3-import-from-name",
+    "body": ["s3.Bucket.fromBucketName(this, \"${1:id}\", \"${2:bucketName}\")"]
+  },
+
+  "BucketFromArn": {
+    "prefix": "s3-import-from-arn",
+    "body": [
+      "s3.Bucket.fromBucketArn(this, \"${1:id}\", \"arn:aws::s3:::${2:bucketName}\")"
+    ]
+  },
+
+  "BucketFromAttributes": {
+    "prefix": "s3-import-from-attributes",
+    "body": [
+      "s3.Bucket.fromBucketAttributes(this, \"${1:id}\", {",
+      "  account: \"\",",
+      "  bucketArn: \"arn:aws::s3:::\",",
+      "  bucketDomainName: \"\",",
+      "  bucketDualStackDomainName: \"\",",
+      "  bucketName: \"\",",
+      "  bucketRegionalDomainName: \"\",",
+      "  bucketWebsiteNewUrlFormat: false,",
+      "  bucketWebsiteUrl: \"\",",
+      "  encryptionKey: kms.Key.fromKeyArn(\"arn:aws:kms:[region]:[accountId]:key/[keyId]\"),",
+      "  isWebsite: false,",
+      "  region: \"\"",
+      "})"
+    ]
+  }
+}
