@@ -20,7 +20,7 @@ VSCode CDK snippets is a compilation of snippets created for personal usage over
 
 ## Install
 
-Head to VSCode marketplace and search for "vscode-cdk-snippets"
+Head to VSCode marketplace and search for "CDK Snippets"
 
 ## Usage
 
