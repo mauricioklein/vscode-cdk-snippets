@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
+	"strings"
 )
 
 type item struct {
@@ -21,22 +23,31 @@ type snippetfile struct {
 }
 
 func main() {
-	dumpToMarkdown([]snippetfile{
-		parse("api-gateway"),
-		parse("core"),
-		parse("dynamodb"),
-		parse("iam"),
-		parse("kms"),
-		parse("lambda"),
-		parse("s3"),
-		parse("sns-subscription"),
-		parse("sns"),
-		parse("sqs"),
+	// Load file names
+	var files []string
+	filepath.Walk("./snippets/", func(file string, info os.FileInfo, err error) error {
+		if filepath.Ext(file) == ".code-snippets" {
+			files = append(files, file)
+		}
+
+		return nil
 	})
+
+	// Transform in snippet files instances
+	var snippets []snippetfile
+	for _, file := range files {
+		snippets = append(snippets, parse(file))
+	}
+
+	// Write catalog file
+	dumpToMarkdown(snippets)
 }
 
-func parse(name string) snippetfile {
-	jsonFile, err := os.Open(fmt.Sprintf("snippets/%s.code-snippets", name))
+func parse(path string) snippetfile {
+	_, filenameWithExt := filepath.Split(path)
+	name := strings.TrimSuffix(filenameWithExt, filepath.Ext(path))
+
+	jsonFile, err := os.Open(path)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -75,10 +86,15 @@ func dumpToMarkdown(files []snippetfile) {
 		f.WriteString(fmt.Sprintf("## %s\n", file.Filename))
 		f.WriteString("\n")
 
+		f.WriteString("| Prefix | Description |\n")
+		f.WriteString("|--------|-------------|\n")
+
 		for _, v := range file.snippets {
-			f.WriteString(fmt.Sprintf("- (%s): %s\n", v.Prefix, v.Description))
+			f.WriteString(fmt.Sprintf("| %s | %s |\n", v.Prefix, v.Description))
 		}
 
 		f.WriteString("\n")
+		f.WriteString("---")
+		f.WriteString("\n\n")
 	}
 }
