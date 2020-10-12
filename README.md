@@ -2,6 +2,8 @@
 
 A non-official set of VSCode snippets for CDK development.
 
+![Alt Text](./media/demo.gif)
+
 ## Table of Contents
 
 - [Background](#background)

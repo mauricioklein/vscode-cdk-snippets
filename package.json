@@ -21,14 +21,16 @@
   "keywords": [
     "cdk"
   ],
-  "icon": "images/icon.png",
+  "icon": "media/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/mauricioklein/vscode-cdk-snippets.git"
   },
   "scripts": {
+    "build": "vsce package",
     "commit": "cz",
-    "generate-catalog": "go run bin/generate-catalog.go"
+    "generate-catalog": "go run bin/generate-catalog.go",
+    "release": "standard-version"
   },
   "contributes": {
     "snippets": [
@@ -75,7 +77,9 @@
     ]
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "standard-version": "^9.0.0",
+    "vsce": "^1.81.1"
   },
   "config": {
     "commitizen": {
