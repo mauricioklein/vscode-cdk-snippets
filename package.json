@@ -27,7 +27,8 @@
     "url": "https://github.com/mauricioklein/vscode-cdk-snippets.git"
   },
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "generate-catalog": "go run bin/generate-catalog.go"
   },
   "contributes": {
     "snippets": [
