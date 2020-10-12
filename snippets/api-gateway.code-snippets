@@ -1,0 +1,137 @@
+{
+  "RestAPI": {
+    "prefix": "apigw-rest-api",
+    "body": ["new apigateway.RestApi(this, \"${1:id}\")"]
+  },
+
+  "LambdaRestAPI": {
+    "prefix": "apigw-lambda-rest-api",
+    "body": [
+      "new apigateway.LambdaRestApi(this, \"${1:id}\", {",
+      "  handler: ${2:handler},",
+      "  proxy: ${3|false,true|},",
+      "})"
+    ]
+  },
+
+  "SpecRestApi": {
+    "prefix": "apigw-spec-rest-api",
+    "body": [
+      "new apigateway.SpecRestApi(this, \"${1:id}\", {",
+      "  apiDefinition: ${2},",
+      "})"
+    ]
+  },
+
+  "AssetApiDefinition": {
+    "prefix": "apigw-asset-api-definition",
+    "body": ["new apigateway.AssetApiDefinition(\"${1:path}\")"]
+  },
+
+  "S3ApiDefinition": {
+    "prefix": "apigw-s3-api-definition",
+    "body": [
+      "new apigateway.S3ApiDefinition(",
+      "  ${1:bucket},",
+      "  \"${2:key}\",",
+      ")"
+    ]
+  },
+
+  "InlineApiDefinition": {
+    "prefix": "apigw-inline-api-definition",
+    "body": ["new apigateway.InlineApiDefinition(", "  ${1}", ")"]
+  },
+
+  "Resource": {
+    "prefix": "apigw-add-resource",
+    "body": ["${1:item}.addResource(\"${2:item}\")"]
+  },
+
+  "Method": {
+    "prefix": "apigw-add-method",
+    "body": [
+      "${1:item}.addMethod(",
+      "  \"${2|GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH|}\",",
+      "  ${3:integration},",
+      ")"
+    ]
+  },
+
+  "HttpIntegration": {
+    "prefix": "apigw-http-integration",
+    "body": [
+      "new apigateway.HttpIntegration(\"${1:url}\", {",
+      "  httpMethod: \"${2|GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH|}\",",
+      "  proxy: ${3|false,true|},",
+      "})"
+    ]
+  },
+
+  "LambdaIntegration": {
+    "prefix": "apigw-lambda-integration",
+    "body": [
+      "new apigateway.LambdaIntegration(",
+      "  ${1:handler},",
+      "  {",
+      "    proxy: ${2|false,true|},",
+      "  },",
+      ")"
+    ]
+  },
+
+  "AwsIntegration": {
+    "prefix": "apigw-aws-integration",
+    "body": [
+      "new apigateway.AwsIntegration({",
+      "  service: \"${1:serviceName}\",",
+      "  path: \"${2:servicePath}\",",
+      "  proxy: ${3|false,true|},",
+      "})"
+    ]
+  },
+
+  "AddModel": {
+    "prefix": "apigw-add-model",
+    "body": [
+      "${1:api}.addModel(\"${2:id}\", {",
+      "  modelName: \"${3:modelName}\",",
+      "  contentType: \"${4|application/json,application/x-www-form-urlencoded,application/xml,text/html,text/plain,text/xml,...|}\",",
+      "  schema: {",
+      "    ${5}",
+      "  },",
+      ")"
+    ]
+  },
+
+  "AddProxy": {
+    "prefix": "apigw-add-proxy",
+    "body": [
+      "${1:resource}.addProxy({",
+      "  defaultIntegration: ${2},",
+      "  anyMethod: ${3|false,true|},",
+      "})"
+    ]
+  },
+
+  "TokenAuthorizer": {
+    "prefix": "apigw-token-authorizer",
+    "body": [
+      "new apigateway.TokenAuthorizer(this, \"${1:id}\", {",
+      "  handler: ${2:handler},",
+      "})"
+    ]
+  },
+
+  "RequestAuthorizer": {
+    "prefix": "apigw-request-authorizer",
+    "body": [
+      "new apigateway.RequestAuthorizer(this, \"${1:id}\", {",
+      "  handler: ${2:handler},",
+      "  identitySources: [",
+      "    ${3}",
+      "  ],",
+      "})"
+    ]
+  }
+}
