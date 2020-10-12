@@ -9,7 +9,8 @@
       "  versioned: ${5|false,true|},",
       "  blockPublicAccess: s3.BlockPublicAccess.${6|BLOCK_ALL,BLOCK_ACLS|}",
       "})"
-    ]
+    ],
+    "description": "Generate S3 bucket"
   },
 
   "BlockPublicAccessConfig": {
@@ -21,19 +22,24 @@
       "  ignorePublicAcls: ${3|false,true|},",
       "  restrictPublicBuckets: ${4|false,true|}",
       "}"
-    ]
+    ],
+    "description": "Generate S3 block public access configuration"
   },
 
   "BucketFromName": {
     "prefix": "s3-import-from-name",
-    "body": ["s3.Bucket.fromBucketName(this, \"${1:id}\", \"${2:bucketName}\")"]
+    "body": [
+      "s3.Bucket.fromBucketName(this, \"${1:id}\", \"${2:bucketName}\")"
+    ],
+    "description": "Import S3 bucket by name"
   },
 
   "BucketFromArn": {
     "prefix": "s3-import-from-arn",
     "body": [
       "s3.Bucket.fromBucketArn(this, \"${1:id}\", \"arn:aws::s3:::${2:bucketName}\")"
-    ]
+    ],
+    "description": "Import S3 bucket by ARN"
   },
 
   "BucketFromAttributes": {
@@ -52,6 +58,7 @@
       "  isWebsite: false,",
       "  region: \"\"",
       "})"
-    ]
+    ],
+    "description": "Import S3 bucket by attributes"
   }
 }

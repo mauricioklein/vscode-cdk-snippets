@@ -7,21 +7,25 @@
       "  code: ${3},",
       "  handler: \"${4:index.handler}\",",
       "})"
-    ]
+    ],
+    "description": "Generate a Lambda function"
   },
 
   "CodeFromBucket": {
     "prefix": "lambda-code-from-bucket",
-    "body": ["lambda.Code.fromBucket(${1:bucket}, \"${2:key}\")"]
+    "body": ["lambda.Code.fromBucket(${1:bucket}, \"${2:key}\")"],
+    "description": "Import Lambda function code from S3"
   },
 
   "CodeFromAsset": {
     "prefix": "lambda-code-from-asset",
-    "body": ["lambda.Code.fromAsset(path.join(__dirname, \"${1:path}\"))"]
+    "body": ["lambda.Code.fromAsset(path.join(__dirname, \"${1:path}\"))"],
+    "description": "Import Lambda function code from local assets"
   },
 
   "CodeFromInline": {
     "prefix": "lambda-code-from-inline",
-    "body": ["lambda.Code.fromInline(\"${1:code}\")"]
+    "body": ["lambda.Code.fromInline(\"${1:code}\")"],
+    "description": "Import Lambda function code from inline"
   }
 }

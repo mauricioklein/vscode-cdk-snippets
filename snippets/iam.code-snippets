@@ -6,14 +6,16 @@
       "  roleName: \"${1:id}\",",
       "  assumedBy: $2",
       "})"
-    ]
+    ],
+    "description": "Generate an IAM role"
   },
 
   "ImportRole": {
     "prefix": "iam-import-role",
     "body": [
       "iam.Role.fromRoleArn(this, \"${1:id}\", \"arn:aws:iam::${2:accountId}:role/${3:roleName}\")"
-    ]
+    ],
+    "description": "Import an IAM role by ARN"
   },
 
   "PolicyDocument": {
@@ -24,7 +26,8 @@
       "    $1",
       "  ],",
       "})"
-    ]
+    ],
+    "description": "Generate an IAM policy document"
   },
 
   "PolicyStatement": {
@@ -42,49 +45,57 @@
       "    $4",
       "  ]",
       "})"
-    ]
+    ],
+    "description": "Generate an IAM policy statement"
   },
 
   "AwsManagedPolicyByName": {
     "prefix": "iam-aws-managed-policy-by-name",
     "body": [
       "iam.ManagedPolicy.fromAwsManagedPolicyName(\"${1:managedPolicyName}\")"
-    ]
+    ],
+    "description": "Import an AWS managed policy by name"
   },
 
   "ManagedPolicyByArn": {
     "prefix": "iam-managed-policy-by-arn",
     "body": [
       "iam.ManagedPolicy.fromManagedPolicyArn(this, \"${1:id}\", \"arn:aws:iam::${2:accountId}:policy/${3:managedPolicyPath}\")"
-    ]
+    ],
+    "description": "Import a customer managed policy by ARN"
   },
 
   "ManagedPolicyByName": {
     "prefix": "iam-managed-policy-by-name",
     "body": [
       "iam.ManagedPolicy.fromManagedPolicyName(this, \"${1:id}\", \"${2:managedPolicyName}\")"
-    ]
+    ],
+    "description": "Import a customer managed policy by name"
   },
 
   "AccountPrincipal": {
     "prefix": "iam-account-principal",
-    "body": ["new iam.AccountPrincipal(\"${1:accountId}\")"]
+    "body": ["new iam.AccountPrincipal(\"${1:accountId}\")"],
+    "description": "Generate an IAM account principal"
   },
 
   "ArnPrincipal": {
     "prefix": "iam-arn-principal",
     "body": [
       "new iam.ArnPrincipal(\"arn:aws:iam::${1:accountId}:${2:resource}\")"
-    ]
+    ],
+    "description": "Generate an IAM ARN principal"
   },
 
   "ServicePrincipal": {
     "prefix": "iam-service-principal",
-    "body": ["new iam.ServicePrincipal(\"$1.amazon.com\")"]
+    "body": ["new iam.ServicePrincipal(\"$1.amazon.com\")"],
+    "description": "Generate an IAM service principal"
   },
 
   "OrganizationPrincipal": {
     "prefix": "iam-organization-principal",
-    "body": ["new iam.OrganizationPrincipal(\"o-$1\")"]
+    "body": ["new iam.OrganizationPrincipal(\"o-$1\")"],
+    "description": "Generate an IAM organization principal"
   }
 }

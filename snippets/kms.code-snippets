@@ -5,18 +5,21 @@
       "new kms.Key(this, \"${1:id}\", {",
       "  enableKeyRotation: ${2|false,true|},",
       "})"
-    ]
+    ],
+    "description": "Generate a KMS key"
   },
 
   "KeyFromAlias": {
     "prefix": "kms-key-from-alias",
-    "body": ["kms.Alias.fromAliasName(this, \"${1:id}\", \"${2:alias}\")"]
+    "body": ["kms.Alias.fromAliasName(this, \"${1:id}\", \"${2:alias}\")"],
+    "description": "import a KMS key by alias"
   },
 
   "KeyFromArn": {
     "prefix": "kms-key-from-arn",
     "body": [
       "kms.Key.fromKeyArn(this, \"${1:id}\", \"arn:aws:kms:${2:region}:${3:accountId}:key/${4:keyId}\")"
-    ]
+    ],
+    "description": "Import a KMS key by ARN"
   }
 }

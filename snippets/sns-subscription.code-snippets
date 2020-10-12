@@ -3,34 +3,39 @@
     "prefix": "sns-subscription-url",
     "body": [
       "${1:topic}.addSubscription(new subscription.UrlSubscription(\"${2:url}\"))"
-    ]
+    ],
+    "description": "Add a SNS subscription"
   },
 
   "SQSSubscription": {
     "prefix": "sns-subscription-sqs",
     "body": [
       "${1:topic}.addSubscription(new subscription.SqsSubscription(${2:queue}))"
-    ]
+    ],
+    "description": "Add a SQS subscription"
   },
 
   "LambdaSubscription": {
     "prefix": "sns-subscription-lambda",
     "body": [
       "${1:topic}.addSubscription(new subscription.LambdaSubscription(${2:lambda}))"
-    ]
+    ],
+    "description": "Add a Lambda subscription"
   },
 
   "EmailSubscription": {
     "prefix": "sns-subscription-email",
     "body": [
       "${1:topic}.addSubscription(new subscription.EmailSubscription(\"${2:email}\"))"
-    ]
+    ],
+    "description": "Add an email subscription"
   },
 
   "SMSSubscription": {
     "prefix": "sns-subscription-sms",
     "body": [
       "${1:topic}.addSubscription(new subscription.SmsSubscription(\"${2:phoneNumber}\"))"
-    ]
+    ],
+    "description": "Add a SMS subscription"
   }
 }

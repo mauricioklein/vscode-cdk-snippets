@@ -1,7 +1,8 @@
 {
   "CDK Import": {
     "prefix": "cdk-import",
-    "body": ["import * as ${1:service} from '@aws-cdk/aws-${1:service}';"]
+    "body": ["import * as ${1:service} from '@aws-cdk/aws-${1:service}';"],
+    "description": "Generate a CDK import statement"
   },
 
   "CDK Construct": {
@@ -20,7 +21,8 @@
       "    ${3}",
       "  }",
       "}"
-    ]
+    ],
+    "description": "Generate a CDK construct scaffold"
   },
 
   "CDK Stack": {
@@ -39,7 +41,8 @@
       "    ${2}",
       "  }",
       "}"
-    ]
+    ],
+    "description": "Generate a CDK stack scaffold"
   },
 
   "CDK App": {
@@ -52,7 +55,8 @@
       "const app = new cdk.App();",
       "",
       "$1"
-    ]
+    ],
+    "description": "Generate a CDK app scaffold"
   },
 
   "Cfn Parameter": {
@@ -61,7 +65,8 @@
       "new cdk.CfnParameter(this, \"${1:id}\", {",
       "  type: \"${2|String,Number,List<Number>,CommaDelimitedList|}\"",
       "})"
-    ]
+    ],
+    "description": "Add a CloudFormation parameter"
   },
 
   "Cfn Output": {
@@ -71,6 +76,7 @@
       "  value: \"${2}\",",
       "  exportName: \"${1}\"",
       "})"
-    ]
+    ],
+    "description": "Add a CloudFormation output"
   }
 }

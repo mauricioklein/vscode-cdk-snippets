@@ -1,7 +1,8 @@
 {
   "RestAPI": {
     "prefix": "apigw-rest-api",
-    "body": ["new apigateway.RestApi(this, \"${1:id}\")"]
+    "body": ["new apigateway.RestApi(this, \"${1:id}\")"],
+    "description": "Generate an API Gateway REST API"
   },
 
   "LambdaRestAPI": {
@@ -11,7 +12,8 @@
       "  handler: ${2:handler},",
       "  proxy: ${3|false,true|},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway Lambda REST API"
   },
 
   "SpecRestApi": {
@@ -20,12 +22,14 @@
       "new apigateway.SpecRestApi(this, \"${1:id}\", {",
       "  apiDefinition: ${2},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway Spec REST API"
   },
 
   "AssetApiDefinition": {
     "prefix": "apigw-asset-api-definition",
-    "body": ["new apigateway.AssetApiDefinition(\"${1:path}\")"]
+    "body": ["new apigateway.AssetApiDefinition(\"${1:path}\")"],
+    "description": "Generate an API Gateway Asset API definition"
   },
 
   "S3ApiDefinition": {
@@ -35,17 +39,20 @@
       "  ${1:bucket},",
       "  \"${2:key}\",",
       ")"
-    ]
+    ],
+    "description": "Generate an API Gateway S3 API definition"
   },
 
   "InlineApiDefinition": {
     "prefix": "apigw-inline-api-definition",
-    "body": ["new apigateway.InlineApiDefinition(", "  ${1}", ")"]
+    "body": ["new apigateway.InlineApiDefinition(", "  ${1}", ")"],
+    "description": "Generate an API Gateway Inline API definition"
   },
 
   "Resource": {
     "prefix": "apigw-add-resource",
-    "body": ["${1:item}.addResource(\"${2:item}\")"]
+    "body": ["${1:item}.addResource(\"${2:item}\")"],
+    "description": "Generate an API Gateway resource"
   },
 
   "Method": {
@@ -55,7 +62,8 @@
       "  \"${2|GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH|}\",",
       "  ${3:integration},",
       ")"
-    ]
+    ],
+    "description": "Generate an API Gateway method"
   },
 
   "HttpIntegration": {
@@ -65,7 +73,8 @@
       "  httpMethod: \"${2|GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH|}\",",
       "  proxy: ${3|false,true|},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway HTTP integration"
   },
 
   "LambdaIntegration": {
@@ -77,7 +86,8 @@
       "    proxy: ${2|false,true|},",
       "  },",
       ")"
-    ]
+    ],
+    "description": "Generate an API Gateway lambda integration"
   },
 
   "AwsIntegration": {
@@ -88,7 +98,8 @@
       "  path: \"${2:servicePath}\",",
       "  proxy: ${3|false,true|},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway AWS integration"
   },
 
   "AddModel": {
@@ -101,7 +112,8 @@
       "    ${5}",
       "  },",
       ")"
-    ]
+    ],
+    "description": "Generate an API Gateway model"
   },
 
   "AddProxy": {
@@ -111,7 +123,8 @@
       "  defaultIntegration: ${2},",
       "  anyMethod: ${3|false,true|},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway proxy"
   },
 
   "TokenAuthorizer": {
@@ -120,7 +133,8 @@
       "new apigateway.TokenAuthorizer(this, \"${1:id}\", {",
       "  handler: ${2:handler},",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway token authorizer"
   },
 
   "RequestAuthorizer": {
@@ -132,6 +146,7 @@
       "    ${3}",
       "  ],",
       "})"
-    ]
+    ],
+    "description": "Generate an API Gateway request authorizer"
   }
 }

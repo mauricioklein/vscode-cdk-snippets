@@ -8,11 +8,13 @@
       "  retentionPeriod: cdk.Duration.$4,",
       "  deadLetterQueue: ${5},",
       "})"
-    ]
+    ],
+    "description": "Add a SQS queue"
   },
 
   "DeadLetterQueue": {
     "prefix": "sqs-dlq",
-    "body": ["{", "  maxReceiveCount: ${1},", "  queue: ${2},", "}"]
+    "body": ["{", "  maxReceiveCount: ${1},", "  queue: ${2},", "}"],
+    "description": "Generate a SQS dead-letter queue configuration"
   }
 }
