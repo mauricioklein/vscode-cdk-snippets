@@ -8,7 +8,26 @@
     ],
     "description": "Add a SNS topic"
   },
-
+  "TopicWithKms": {
+    "prefix": "sns-topic-encrypted-kms",
+    "body": [
+      "new sns.Topic(this, \"${1:id}\", {",
+      "  topicName: \"${2}\",",
+      "  masterKey: ${3:kmsKey},",
+      "})"
+    ],
+    "description": "Add an encrypted SNS topic with KMS encryption"
+  },
+  "TopicWithKmsFromArn": {
+    "prefix": "sns-topic-encrypted-kms-from-arn",
+    "body": [
+      "new sns.Topic(this, \"${1:id}\", {",
+      "  topicName: \"${2}\",",
+      "  masterKey: kms.Key.fromKeyArn(this, \"${3:id}\", \"arn:aws:kms:${4:region}:${5:accountId}:key/${6:keyId}\")",
+      "})"
+    ],
+    "description": "Add an encrypted SNS topic with an imported KMS key by ARN"
+  },
   "TopicFromArn": {
     "prefix": "sns-topic-from-arn",
     "body": [
