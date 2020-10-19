@@ -36,7 +36,7 @@
       "",
       "export class ${1:StackName} extends Stack {",
       "  constructor(scope: App, id: string, props: ${1:StackName}Props) {",
-      "    super(scope, id);",
+      "    super(scope, id, props);",
       "",
       "    ${2}",
       "  }",
