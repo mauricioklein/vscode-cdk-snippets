@@ -29,7 +29,7 @@
   "scripts": {
     "build": "vsce package",
     "commit": "cz",
-    "generate-catalog": "go run bin/generate-catalog.go",
+    "update-catalog": "node bin/update-catalog.js",
     "release": "standard-version"
   },
   "contributes": {

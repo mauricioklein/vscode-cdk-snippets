@@ -6,21 +6,21 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| apigw-inline-api-definition | Generate an API Gateway Inline API definition |
-| apigw-token-authorizer | Generate an API Gateway token authorizer |
-| apigw-add-model | Generate an API Gateway model |
-| apigw-rest-api | Generate an API Gateway REST API |
-| apigw-lambda-rest-api | Generate an API Gateway Lambda REST API |
-| apigw-spec-rest-api | Generate an API Gateway Spec REST API |
-| apigw-add-resource | Generate an API Gateway resource |
-| apigw-lambda-integration | Generate an API Gateway lambda integration |
-| apigw-aws-integration | Generate an API Gateway AWS integration |
-| apigw-asset-api-definition | Generate an API Gateway Asset API definition |
-| apigw-s3-api-definition | Generate an API Gateway S3 API definition |
 | apigw-add-method | Generate an API Gateway method |
+| apigw-add-model | Generate an API Gateway model |
 | apigw-add-proxy | Generate an API Gateway proxy |
+| apigw-add-resource | Generate an API Gateway resource |
+| apigw-asset-api-definition | Generate an API Gateway Asset API definition |
+| apigw-aws-integration | Generate an API Gateway AWS integration |
 | apigw-http-integration | Generate an API Gateway HTTP integration |
+| apigw-inline-api-definition | Generate an API Gateway Inline API definition |
+| apigw-lambda-integration | Generate an API Gateway lambda integration |
+| apigw-lambda-rest-api | Generate an API Gateway Lambda REST API |
 | apigw-request-authorizer | Generate an API Gateway request authorizer |
+| apigw-rest-api | Generate an API Gateway REST API |
+| apigw-s3-api-definition | Generate an API Gateway S3 API definition |
+| apigw-spec-rest-api | Generate an API Gateway Spec REST API |
+| apigw-token-authorizer | Generate an API Gateway token authorizer |
 
 ---
 
@@ -28,12 +28,12 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| cdk-import | Generate a CDK import statement |
-| cdk-construct | Generate a CDK construct scaffold |
-| cdk-stack | Generate a CDK stack scaffold |
 | cdk-app | Generate a CDK app scaffold |
-| cfn-parameter | Add a CloudFormation parameter |
+| cdk-construct | Generate a CDK construct scaffold |
+| cdk-import | Generate a CDK import statement |
+| cdk-stack | Generate a CDK stack scaffold |
 | cfn-output | Add a CloudFormation output |
+| cfn-parameter | Add a CloudFormation parameter |
 
 ---
 
@@ -41,10 +41,10 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
+| ddb-attribute | Add a DynamoDB table attribute |
 | ddb-gsi | Generate a DynamoDB global secondary index |
 | ddb-lsi | Generate a DynamoDB local secondary index |
 | ddb-table | Generate a DynamoDB table |
-| ddb-attribute | Add a DynamoDB table attribute |
 
 ---
 
@@ -52,17 +52,17 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| iam-import-role | Import an IAM role by ARN |
-| iam-aws-managed-policy-by-name | Import an AWS managed policy by name |
-| iam-managed-policy-by-name | Import a customer managed policy by name |
-| iam-service-principal | Generate an IAM service principal |
-| iam-role | Generate an IAM role |
-| iam-policy-statement | Generate an IAM policy statement |
-| iam-managed-policy-by-arn | Import a customer managed policy by ARN |
 | iam-account-principal | Generate an IAM account principal |
 | iam-arn-principal | Generate an IAM ARN principal |
+| iam-aws-managed-policy-by-name | Import an AWS managed policy by name |
+| iam-import-role | Import an IAM role by ARN |
+| iam-managed-policy-by-arn | Import a customer managed policy by ARN |
+| iam-managed-policy-by-name | Import a customer managed policy by name |
 | iam-organization-principal | Generate an IAM organization principal |
 | iam-policy-document | Generate an IAM policy document |
+| iam-policy-statement | Generate an IAM policy statement |
+| iam-role | Generate an IAM role |
+| iam-service-principal | Generate an IAM service principal |
 
 ---
 
@@ -80,8 +80,8 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| lambda-code-from-bucket | Import Lambda function code from S3 |
 | lambda-code-from-asset | Import Lambda function code from local assets |
+| lambda-code-from-bucket | Import Lambda function code from S3 |
 | lambda-code-from-inline | Import Lambda function code from inline |
 | lambda-function | Generate a Lambda function |
 
@@ -91,11 +91,11 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| s3-import-from-attributes | Import S3 bucket by attributes |
-| s3-bucket | Generate S3 bucket |
 | s3-block-config | Generate S3 block public access configuration |
-| s3-import-from-name | Import S3 bucket by name |
+| s3-bucket | Generate S3 bucket |
 | s3-import-from-arn | Import S3 bucket by ARN |
+| s3-import-from-attributes | Import S3 bucket by attributes |
+| s3-import-from-name | Import S3 bucket by name |
 
 ---
 
@@ -103,11 +103,11 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| sns-subscription-url | Add a SNS subscription |
-| sns-subscription-sqs | Add a SQS subscription |
-| sns-subscription-lambda | Add a Lambda subscription |
 | sns-subscription-email | Add an email subscription |
+| sns-subscription-lambda | Add a Lambda subscription |
 | sns-subscription-sms | Add a SMS subscription |
+| sns-subscription-sqs | Add a SQS subscription |
+| sns-subscription-url | Add a SNS subscription |
 
 ---
 
@@ -115,8 +115,8 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| sns-topic-from-arn | Import a SNS topic by ARN |
 | sns-topic | Add a SNS topic |
+| sns-topic-from-arn | Import a SNS topic by ARN |
 
 ---
 
@@ -124,8 +124,8 @@ Here's a list of snippets available at the moment:
 
 | Prefix | Description |
 |--------|-------------|
-| sqs-queue | Add a SQS queue |
 | sqs-dlq | Generate a SQS dead-letter queue configuration |
+| sqs-queue | Add a SQS queue |
 
 ---
 
