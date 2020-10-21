@@ -129,6 +129,26 @@ Here's a list of snippets available at the moment:
 
 ---
 
+## step-functions-tasks
+
+| Prefix | Description |
+|--------|-------------|
+| step-function-task-batch | Add a Step Function Task for AWS Batch submit job |
+| step-function-task-code-build | Add a Step Function Task for CodeBuild start build |
+| step-function-task-dynamo-attribute-value | Generate a DynamoDB attribute value statement for Step Function Task |
+| step-function-task-dynamo-delete-item | Add a Step Function Task for DynamoDB delete item |
+| step-function-task-dynamo-get-item | Add a Step Function Task for DynamoDB get item |
+| step-function-task-dynamo-put-item | Add a Step Function Task for DynamoDB put item |
+| step-function-task-dynamo-update-item | Add a Step Function Task for DynamoDB update item |
+| step-function-task-evaluate | Add a Step Function Task Evaluate |
+| step-function-task-invoke-activity | Add a Step Function Task for Step Function invoke activity |
+| step-function-task-lambda-invoke | Add a Step Function Task for Lambda invoke |
+| step-function-task-sns-publish | Add a Step Function Task for SNS publish |
+| step-function-task-sqs-send-message | Add a Step Function Task for SQS send message |
+| step-function-task-start-execution | Add a Step Function Task for Step Function start execution |
+
+---
+
 ## step-functions
 
 | Prefix | Description |

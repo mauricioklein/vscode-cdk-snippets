@@ -77,6 +77,10 @@
       {
         "language": "typescript",
         "path": "./snippets/step-functions.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/step-functions-tasks.code-snippets"
       }
     ]
   },
