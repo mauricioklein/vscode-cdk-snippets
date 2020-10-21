@@ -129,3 +129,25 @@ Here's a list of snippets available at the moment:
 
 ---
 
+## step-functions
+
+| Prefix | Description |
+|--------|-------------|
+| step-function-activity | Generate a Step Function Activity |
+| step-function-choice | Generate a Step Function Choice state |
+| step-function-condition | Generate a Step Function Condition statement |
+| step-function-custom-state | Generate a Step Function CustomState state |
+| step-function-fail | Generate a Step Function Fail state |
+| step-function-integration-pattern | Add a Step Function Integration Pattern value |
+| step-function-json-path | Add a Step Function Json Path statement |
+| step-function-map | Generate a Step Function Map state |
+| step-function-parallel | Generate a Step Function Parallel state |
+| step-function-pass | Generate a Step Function Pass state |
+| step-function-state-machine | Generate a Step Function state machine |
+| step-function-succeed | Generate a Step Function Succeed state |
+| step-function-task-input | Add a Step Function Task Input statement |
+| step-function-wait | Generate a Step Function Wait state |
+| step-function-wait-time | Generate a Step Function WaitTime statement |
+
+---
+

@@ -73,6 +73,10 @@
       {
         "language": "typescript",
         "path": "./snippets/api-gateway.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/step-functions.code-snippets"
       }
     ]
   },

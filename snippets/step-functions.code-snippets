@@ -1,0 +1,127 @@
+{
+  "StepFunctionStateMachine": {
+    "prefix": "step-function-state-machine",
+    "body": [
+      "new sfn.StateMachine(this, \"${1:id}\", {",
+      "  stateMachineType: sfn.StateMachineType.${2|STANDARD,EXPRESS|},",
+      "  definition: ${3:definition},",
+      "})"
+    ],
+    "description": "Generate a Step Function state machine"
+  },
+
+  "StepFunctionPass": {
+    "prefix": "step-function-pass",
+    "body": [
+      "new sfn.Pass(this, \"${1:id}\", {",
+      "  result: ${2:resultExpression},",
+      "  resultPath: ${3:resultPath},",
+      "})"
+    ],
+    "description": "Generate a Step Function Pass state"
+  },
+
+  "StepFunctionWait": {
+    "prefix": "step-function-wait",
+    "body": ["new sfn.Wait(this, \"${1:id}\", {", "  time: ${2:time},", "})"],
+    "description": "Generate a Step Function Wait state"
+  },
+
+  "StepFunctionWaitTime": {
+    "prefix": "step-function-wait-time",
+    "body": [
+      "sfn.WaitTime.${1|duration,secondsPath,timestamp,timestampPath|}(${2})"
+    ],
+    "description": "Generate a Step Function WaitTime statement"
+  },
+
+  "StepFunctionChoice": {
+    "prefix": "step-function-choice",
+    "body": ["new sfn.Choice(this, \"${1:id}\")"],
+    "description": "Generate a Step Function Choice state"
+  },
+
+  "StepFunctionCondition": {
+    "prefix": "step-function-condition",
+    "body": [
+      "sfn.Condition.${1|and,booleanEquals,booleanEqualsJsonPath,isBoolean,isNotBoolean,isNotNull,isNotNumeric,isNotPresent,isNotString,isNotTimestamp,isNull,isNumeric,isPresent,isString,isTimestamp,not,numberEquals,numberEqualsJsonPath,numberGreaterThan,numberGreaterThanEquals,numberGreaterThanEqualsJsonPath,numberGreaterThanJsonPath,numberLessThan,numberLessThanEquals,numberLessThanEqualsJsonPath,numberLessThanJsonPath,or,stringEquals,stringEqualsJsonPath,stringGreaterThan,stringGreaterThanEquals,stringGreaterThanEqualsJsonPath,stringGreaterThanJsonPath,stringLessThan,stringLessThanEquals,stringLessThanEqualsJsonPath,stringLessThanJsonPath,stringMatches,timestampEquals,timestampEqualsJsonPath,timestampGreaterThan,timestampGreaterThanEquals,timestampGreaterThanEqualsJsonPath,timestampGreaterThanJsonPath,timestampLessThan,timestampLessThanEquals,timestampLessThanEqualsJsonPath,timestampLessThanJsonPath|}(${2})"
+    ],
+    "description": "Generate a Step Function Condition statement"
+  },
+
+  "StepFunctionParallel": {
+    "prefix": "step-function-parallel",
+    "body": ["new sfn.Parallel(this, \"${1:id}\")"],
+    "description": "Generate a Step Function Parallel state"
+  },
+
+  "StepFunctionSucceed": {
+    "prefix": "step-function-succeed",
+    "body": ["new sfn.Succeed(this, \"${1:message}\")"],
+    "description": "Generate a Step Function Succeed state"
+  },
+
+  "StepFunctionFail": {
+    "prefix": "step-function-fail",
+    "body": [
+      "new sfn.Fail(this, \"${1:message}\", {",
+      "  error: \"${2:errorMessage}\",",
+      "  cause: \"${3:errorCause}\",",
+      "})"
+    ],
+    "description": "Generate a Step Function Fail state"
+  },
+
+  "StepFunctionMap": {
+    "prefix": "step-function-map",
+    "body": [
+      "new sfn.Map(this, \"${1:id}\", {",
+      "  maxConcurrency: ${2},",
+      "  itemsPath: ${3},",
+      "})"
+    ],
+    "description": "Generate a Step Function Map state"
+  },
+
+  "StepFunctionCustomState": {
+    "prefix": "step-function-custom-state",
+    "body": [
+      "new sfn.CustomState(this, \"${1:id}\", {",
+      "  stateJson: {",
+      "    ${2}",
+      "  },",
+      "})"
+    ],
+    "description": "Generate a Step Function CustomState state"
+  },
+
+  "StepFunctionActivity": {
+    "prefix": "step-function-activity",
+    "body": ["new sfn.Activity(this, \"${1:id}\")"],
+    "description": "Generate a Step Function Activity"
+  },
+
+  "StepFunctionIntegrationPattern": {
+    "prefix": "step-function-integration-pattern",
+    "body": [
+      "sfn.IntegrationPattern.${3|REQUEST_RESPONSE,RUN_JOB,WAIT_FOR_TASK_TOKEN|}"
+    ],
+    "description": "Add a Step Function Integration Pattern value"
+  },
+
+  "StepFunctionTaskInput": {
+    "prefix": "step-function-task-input",
+    "body": [
+      "sfn.TaskInput.${1|fromContextAt,fromDataAt,fromJsonPathAt,fromObject,fromText|}(${2})"
+    ],
+    "description": "Add a Step Function Task Input statement"
+  },
+
+  "StepFunctionJsonPath": {
+    "prefix": "step-function-json-path",
+    "body": [
+      "sfn.JsonPath.${1|isEncodedJsonPath,listAt,numberAt,stringAt|}(\"${2}\")"
+    ],
+    "description": "Add a Step Function Json Path statement"
+  }
+}
