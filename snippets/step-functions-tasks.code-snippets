@@ -1,0 +1,152 @@
+{
+  "StepFunctionsTaskEvaluate": {
+    "prefix": "step-function-task-evaluate",
+    "body": [
+      "new tasks.EvaluateExpression(this, \"${1:id}\", {",
+      "  expression: \"${2:expression}\",",
+      "  resultPath: \"${3:resultPath}\",",
+      "})"
+    ],
+    "description": "Add a Step Function Task Evaluate"
+  },
+
+  "StepFunctionsTaskBatch": {
+    "prefix": "step-function-task-batch",
+    "body": [
+      "new tasks.BatchSubmitJob(this, \"${1:id}\", {",
+      "  jobName: \"${2:jobName}\",",
+      "  jobDefinition: ${3},",
+      "  jobQueue: ${4},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for AWS Batch submit job"
+  },
+
+  "StepFunctionsTaskCodeBuild": {
+    "prefix": "step-function-task-code-build",
+    "body": [
+      "new tasks.CodeBuildStartBuild(this, \"${1:id}\", {",
+      "  project: ${2:codeBuildProject},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for CodeBuild start build"
+  },
+
+  "StepFunctionsTaskDynamoGetItem": {
+    "prefix": "step-function-task-dynamo-get-item",
+    "body": [
+      "new tasks.DynamoGetItem(this, \"${1:id}\", {",
+      "  table: ${2:table},",
+      "  key: {",
+      "    ${3:keyName}: ${4:dynamoAttributeValue}",
+      "  },",
+      "})"
+    ],
+    "description": "Add a Step Function Task for DynamoDB get item"
+  },
+
+  "StepFunctionsTaskDynamoPutItem": {
+    "prefix": "step-function-task-dynamo-put-item",
+    "body": [
+      "new tasks.DynamoPutItem(this, \"${1:id}\", {",
+      "  table: ${2:table},",
+      "  item: {",
+      "    ${3}",
+      "  },",
+      "})"
+    ],
+    "description": "Add a Step Function Task for DynamoDB put item"
+  },
+
+  "StepFunctionsTaskDynamoDeleteItem": {
+    "prefix": "step-function-task-dynamo-delete-item",
+    "body": [
+      "new tasks.DynamoDeleteItem(this, \"${1:id}\", {",
+      "  table: ${2:table},",
+      "  key: {",
+      "    ${3:keyName}: ${4:dynamoAttributeValue}",
+      "  },",
+      "})"
+    ],
+    "description": "Add a Step Function Task for DynamoDB delete item"
+  },
+
+  "StepFunctionsTaskDynamoUpdateItem": {
+    "prefix": "step-function-task-dynamo-update-item",
+    "body": [
+      "new tasks.DynamoUpdateItem(this, \"${1:id}\", {",
+      "  table: ${2:table},",
+      "  key: {",
+      "    ${3:keyName}: ${4:dynamoAttributeValue}",
+      "  },",
+      "  updateExpression: \"${5:updateExpression}\",",
+      "  expressionAttributeValues: {",
+      "    ${6:keyName}: ${7:dynamoAttributeValue}",
+      "  },",
+      "})"
+    ],
+    "description": "Add a Step Function Task for DynamoDB update item"
+  },
+
+  "StepFunctionsTaskLambdaInvoke": {
+    "prefix": "step-function-task-lambda-invoke",
+    "body": [
+      "new tasks.LambdaInvoke(this, \"${1:id}\", {",
+      "  lambdaFunction: ${2:function},",
+      "  payload: ${3:taskInput},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for Lambda invoke"
+  },
+
+  "StepFunctionsTaskSnsPublish": {
+    "prefix": "step-function-task-sns-publish",
+    "body": [
+      "new tasks.SnsPublish(this, \"${1:id}\", {",
+      "  topic: ${2:snsTopic},",
+      "  message: ${3:message},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for SNS publish"
+  },
+
+  "StepFunctionsTaskStartExecution": {
+    "prefix": "step-function-task-start-execution",
+    "body": [
+      "new tasks.StepFunctionsStartExecution(this, \"${1:id}\", {",
+      "  name: \"${2:executionName}\",",
+      "  stateMachine: ${3:stateMachine},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for Step Function start execution"
+  },
+
+  "StepFunctionsTaskInvokeActivity": {
+    "prefix": "step-function-task-invoke-activity",
+    "body": [
+      "new tasks.StepFunctionsInvokeActivity(this, \"${1:id}\", {",
+      "  activity: ${2:activity},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for Step Function invoke activity"
+  },
+
+  "StepFunctionsTaskSqsSendMessage": {
+    "prefix": "step-function-task-sqs-send-message",
+    "body": [
+      "new tasks.SqsSendMessage(this, \"${1:id}\", {",
+      "  queue: ${2:sqsQueue},",
+      "  messageBody: ${3:messageBody},",
+      "})"
+    ],
+    "description": "Add a Step Function Task for SQS send message"
+  },
+
+  "StepFunctionsTaskDynamoAttributeValue": {
+    "prefix": "step-function-task-dynamo-attribute-value",
+    "body": [
+      "tasks.DynamoAttributeValue.${1|booleanFromJsonPath,fromBinary,fromBinarySet,fromBoolean,fromList,fromMap,fromNull,fromNumber,fromNumberSet,fromString,fromStringSet,mapFromJsonPath,numberFromString,numberSetFromStrings|}(\"$2\")"
+    ],
+    "description": "Generate a DynamoDB attribute value statement for Step Function Task"
+  }
+}
