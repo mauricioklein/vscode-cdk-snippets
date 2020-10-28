@@ -48,6 +48,35 @@ Here's a list of snippets available at the moment:
 
 ---
 
+## events-targets
+
+| Prefix | Description |
+|--------|-------------|
+| events-targets-api | Generate an Event Bridge AWS API target |
+| events-targets-batch-job | Generate an Event Bridge AWS Batch job target |
+| events-targets-code-build-project | Generate an Event Bridge CodeBuild project target |
+| events-targets-code-pipeline | Generate an Event Bridge CodePipeline target |
+| events-targets-ecs-task | Generate an Event Bridge ECS task target |
+| events-targets-kinesis-firehose-stream | Generate an Event Bridge Kinesis Firehose stream target |
+| events-targets-kinesis-stream | Generate an Event Bridge Kinesis stream target |
+| events-targets-lambda-function | Generate an Event Bridge Lambda function target |
+| events-targets-sfn-state-machine | Generate an Event Bridge Step Function state machine target |
+| events-targets-sns-topic | Generate an Event Bridge SNS topic target |
+| events-targets-sqs-queue | Generate an Event Bridge SQS queue target |
+
+---
+
+## events
+
+| Prefix | Description |
+|--------|-------------|
+| events-rule | Generate an Event Bridge rule |
+| events-schedule-cron | Generate an Event Bridge schedule crontab statement |
+| events-schedule-expression | Generate an Event Bridge schedule expression statement |
+| events-schedule-rate | Generate an Event Bridge schedule rate statement |
+
+---
+
 ## iam
 
 | Prefix | Description |
