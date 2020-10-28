@@ -85,6 +85,10 @@
       {
         "language": "typescript",
         "path": "./snippets/events.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/events-targets.code-snippets"
       }
     ]
   },

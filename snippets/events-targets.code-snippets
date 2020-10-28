@@ -1,0 +1,100 @@
+{
+  "EventsTargetsAPI": {
+    "prefix": "events-targets-api",
+    "body": [
+      "new targets.AwsApi({",
+      "  action: \"${1}\",",
+      "  service: \"${2}\",",
+      "})"
+    ],
+    "description": "Generate an Event Bridge AWS API target"
+  },
+
+  "EventsTargetsBatchJob": {
+    "prefix": "events-targets-batch-job",
+    "body": [
+      "new targets.BatchJob(${1:jobQueue}, ${2:jobDefinition}, {",
+      "  jobName: ${3},",
+      "  attempts: ${4},",
+      "})"
+    ],
+    "description": "Generate an Event Bridge AWS Batch job target"
+  },
+
+  "EventsTargetsCodeBuildProject": {
+    "prefix": "events-targets-code-build-project",
+    "body": [
+      "new targets.CodeBuildProject(${1:project}, {",
+      "  eventRole: ${2},",
+      "})"
+    ],
+    "description": "Generate an Event Bridge CodeBuild project target"
+  },
+
+  "EventsTargetsCodePipeline": {
+    "prefix": "events-targets-code-pipeline",
+    "body": [
+      "new targets.CodePipeline(${1:pipeline}, {",
+      "  eventRole: ${2},",
+      "})"
+    ],
+    "description": "Generate an Event Bridge CodePipeline target"
+  },
+
+  "EventsTargetsEcsTask": {
+    "prefix": "events-targets-ecs-task",
+    "body": [
+      "new targets.EcsTask({",
+      "  cluster: ${1},",
+      "  taskDefinition: ${2},",
+      "  taskCount: ${3},",
+      "  role: ${4},",
+      "})"
+    ],
+    "description": "Generate an Event Bridge ECS task target"
+  },
+
+  "EventsTargetsKinesisFirehoseStream": {
+    "prefix": "events-targets-kinesis-firehose-stream",
+    "body": [
+      "new targets.KinesisFirehoseStream(${1:stream}, {",
+      "  ${2}",
+      "})"
+    ],
+    "description": "Generate an Event Bridge Kinesis Firehose stream target"
+  },
+
+  "EventsTargetsKinesisStream": {
+    "prefix": "events-targets-kinesis-stream",
+    "body": ["new targets.KinesisStream(${1:stream}, {", "  ${2}", "})"],
+    "description": "Generate an Event Bridge Kinesis stream target"
+  },
+
+  "EventsTargetsLambdaFunction": {
+    "prefix": "events-targets-lambda-function",
+    "body": ["new targets.LambdaFunction(${1:function}, {", "  ${2}", "})"],
+    "description": "Generate an Event Bridge Lambda function target"
+  },
+
+  "EventsTargetsSfnStateMachine": {
+    "prefix": "events-targets-sfn-state-machine",
+    "body": [
+      "new targets.SfnStateMachine(${1:state-machine}, {",
+      "  role: ${2}",
+      "})"
+    ],
+    "description": "Generate an Event Bridge Step Function state machine target"
+  },
+
+  "EventsTargetsSnsTopic": {
+    "prefix": "events-targets-sns-topic",
+    "body": ["new targets.SnsTopic(${1:topic}, {", "  ${2}", "})"],
+    "description": "Generate an Event Bridge SNS topic target"
+  },
+
+  "EventsTargetsSqsQueue": {
+    "prefix": "events-targets-sqs-queue",
+    "body": ["new targets.SqsQueue(${1:queue}, {", "  ${2}", "})"],
+    "description": "Generate an Event Bridge SQS queue target"
+  }
+}
