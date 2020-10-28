@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/mauricioklein/vscode-cdk-snippets/compare/v0.1.0...v0.1.1) (2020-10-28)
+
+
+### Features
+
+* **snippets:** Add snippets for Event Bridge + Targets ([#7](https://github.com/mauricioklein/vscode-cdk-snippets/issues/7)) ([a9622e0](https://github.com/mauricioklein/vscode-cdk-snippets/commit/a9622e08068b43fd85b65dbe733ae31e02020bb9))
+* **snippets:** Add snippets for StepFunctions ([#5](https://github.com/mauricioklein/vscode-cdk-snippets/issues/5)) ([b52a1c7](https://github.com/mauricioklein/vscode-cdk-snippets/commit/b52a1c7693283f1353d062a23922b3bc00faf663))
+* **snippets:** Add snippets for StepFunctions Tasks ([#6](https://github.com/mauricioklein/vscode-cdk-snippets/issues/6)) ([fbd09fc](https://github.com/mauricioklein/vscode-cdk-snippets/commit/fbd09fcb82234498375c023ff0fa7feeab7d3db2))
+
+
+### Bug Fixes
+
+* propagate stack props to super ([8a5679c](https://github.com/mauricioklein/vscode-cdk-snippets/commit/8a5679c74b1083bdd0890c78a276a697ae47d076))
+
 ## 0.1.0 (2020-10-12)
 
 
