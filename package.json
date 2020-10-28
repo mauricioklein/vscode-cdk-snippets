@@ -81,6 +81,10 @@
       {
         "language": "typescript",
         "path": "./snippets/step-functions-tasks.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/events.code-snippets"
       }
     ]
   },

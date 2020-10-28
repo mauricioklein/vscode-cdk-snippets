@@ -48,6 +48,17 @@ Here's a list of snippets available at the moment:
 
 ---
 
+## events
+
+| Prefix | Description |
+|--------|-------------|
+| events-rule | Generate an Event Bridge rule |
+| events-schedule-cron | Generate an Event Bridge schedule crontab statement |
+| events-schedule-expression | Generate an Event Bridge schedule expression statement |
+| events-schedule-rate | Generate an Event Bridge schedule rate statement |
+
+---
+
 ## iam
 
 | Prefix | Description |

@@ -1,0 +1,40 @@
+{
+  "EventRule": {
+    "prefix": "events-rule",
+    "body": [
+      "new events.Rule(this, \"${1:id}\", {",
+      "  targets: [",
+      "    ${2}",
+      "  ],",
+      "})"
+    ],
+    "description": "Generate an Event Bridge rule"
+  },
+
+  "EventScheduleCron": {
+    "prefix": "events-schedule-cron",
+    "body": [
+      "events.Schedule.cron({",
+      "  day: \"${1}\",",
+      "  hour: \"${2}\",",
+      "  minute: \"${3}\",",
+      "  month: \"${4}\",",
+      "  weekDay: \"${5}\",",
+      "  year: \"${6}\",",
+      "})"
+    ],
+    "description": "Generate an Event Bridge schedule crontab statement"
+  },
+
+  "EventScheduleExpression": {
+    "prefix": "events-schedule-expression",
+    "body": ["events.Schedule.expression(\"${1}\")"],
+    "description": "Generate an Event Bridge schedule expression statement"
+  },
+
+  "EventScheduleRate": {
+    "prefix": "events-schedule-rate",
+    "body": ["events.Schedule.rate(cdk.Duration.${1})"],
+    "description": "Generate an Event Bridge schedule rate statement"
+  }
+}
