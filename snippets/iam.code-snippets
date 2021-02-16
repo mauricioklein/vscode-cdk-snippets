@@ -89,7 +89,7 @@
 
   "ServicePrincipal": {
     "prefix": "iam-service-principal",
-    "body": ["new iam.ServicePrincipal(\"$1.amazon.com\")"],
+    "body": ["new iam.ServicePrincipal(\"$1.amazonaws.com\")"],
     "description": "Generate an IAM service principal"
   },
 
