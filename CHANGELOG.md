@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/mauricioklein/vscode-cdk-snippets/compare/v0.1.2...v0.1.3) (2021-05-17)
+
+
+### Bug Fixes
+
+* **deps:** bump vulnerable dependencies ([#14](https://github.com/mauricioklein/vscode-cdk-snippets/issues/14)) ([06a52f8](https://github.com/mauricioklein/vscode-cdk-snippets/commit/06a52f863c7312bbd299cbdf96390c98f81df798))
+
 ### [0.1.2](https://github.com/mauricioklein/vscode-cdk-snippets/compare/v0.1.1...v0.1.2) (2021-02-16)
 
 
