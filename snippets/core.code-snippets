@@ -1,21 +1,21 @@
 {
   "CDK Import": {
     "prefix": "cdk-import",
-    "body": ["import * as ${1:service} from '@aws-cdk/aws-${1:service}';"],
+    "body": ["import * as ${1:service} from 'aws-cdk-lib/aws-${1:service}';"],
     "description": "Generate a CDK import statement"
   },
 
   "CDK Construct": {
     "prefix": "cdk-construct",
     "body": [
-      "import * as cdk from '@aws-cdk/core';",
+      "import { Construct } from 'constructs';",
       "",
       "export interface ${1:ConstructorName}Props {",
       "",
       "}",
       "",
-      "export class ${1:ConstructorName} extends cdk.Construct {",
-      "  constructor(scope: cdk.Construct, id: string, props: ${1:ConstructorName}Props) {",
+      "export class ${1:ConstructorName} extends Construct {",
+      "  constructor(scope: Construct, id: string, props: ${1:ConstructorName}Props) {",
       "    super(scope, id);",
       "",
       "    ${3}",
@@ -28,14 +28,15 @@
   "CDK Stack": {
     "prefix": "cdk-stack",
     "body": [
-      "import * as cdk from '@aws-cdk/core';",
+      "import { Stack, StackProps } from 'aws-cdk-lib';",
+      "import { Construct } from 'constructs';",
       "",
-      "export interface ${1:StackName}Props extends cdk.StackProps {",
+      "export interface ${1:StackName}Props extends StackProps {",
       "",
       "}",
       "",
-      "export class ${1:StackName} extends cdk.Stack {",
-      "  constructor(scope: cdk.Construct, id: string, props: ${1:StackName}Props) {",
+      "export class ${1:StackName} extends Stack {",
+      "  constructor(scope: Construct, id: string, props: ${1:StackName}Props) {",
       "    super(scope, id, props);",
       "",
       "    ${2}",
@@ -50,7 +51,7 @@
     "body": [
       "#!/usr/bin/env node",
       "import 'source-map-support/register';",
-      "import * as cdk from '@aws-cdk/core';",
+      "import * as cdk from 'aws-cdk-lib';",
       "",
       "const app = new cdk.App();",
       "",
